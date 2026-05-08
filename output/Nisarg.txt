@@ -1,0 +1,16 @@
+[2026-03-17 09:45:52] --- Forward Chaining ---
+[2026-03-17 09:45:52] User reported symptoms: fever, cold, headache
+[2026-03-17 09:45:52] Diagnosis Result: Dengue
+
+[2026-03-17 09:50:08] --- Forward Chaining ---
+[2026-03-17 09:50:08] User reported symptoms: headache, stomach_pain, vomiting
+[2026-03-17 09:50:08] Diagnosis Result: Food Poisoning
+[2026-03-17 09:50:36] --- Backward Chaining ---
+[2026-03-17 09:50:36] Testing for disease: flue
+[2026-03-17 09:50:36] Error: Disease not found in KB.
+[2026-03-18 09:04:30] --- Forward Chaining ---
+[2026-03-18 09:04:30] User reported symptoms: cold, cough, fever
+[2026-03-18 09:04:30] Diagnosis Result: Flu
+[2026-03-18 09:04:58] --- Backward Chaining ---
+[2026-03-18 09:04:58] Testing for disease: Dengue
+[2026-03-18 09:04:58] Result: ❌ Symptoms do not match for diagnosis: Dengue

@@ -1,0 +1,8 @@
+[2026-03-17 09:38:56] --- Forward Chaining ---
+[2026-03-17 09:38:56] User reported symptoms: fever, headache
+[2026-03-17 09:38:56] Diagnosis Result: Dengue
+
+[2026-03-17 09:39:54] --- Backward Chaining ---
+[2026-03-17 09:39:54] Testing for disease: Flu
+[2026-03-17 09:39:54] Result: ✔ Confirmed: You match the symptoms for Flu
+

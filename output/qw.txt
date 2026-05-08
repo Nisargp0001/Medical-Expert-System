@@ -1,0 +1,3 @@
+[2026-03-17 12:55:23] --- Backward Chaining ---
+[2026-03-17 12:55:23] Testing for disease: Dengue
+[2026-03-17 12:55:23] Result: ❌ Symptoms do not match for diagnosis: Dengue

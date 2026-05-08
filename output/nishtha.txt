@@ -1,0 +1,3 @@
+[2026-03-17 12:56:06] --- Backward Chaining ---
+[2026-03-17 12:56:06] Testing for disease: flu
+[2026-03-17 12:56:06] Result: ✔ Confirmed: You match the symptoms for Flu
