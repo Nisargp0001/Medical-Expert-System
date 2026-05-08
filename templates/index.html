@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medical Diagnosis Expert System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Interactive Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <div class="glass-card main-card">
+            
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <svg class="medical-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2196F3" stroke-width="6" />
+                    <rect x="42" y="25" width="16" height="50" fill="#2196F3" rx="4" />
+                    <rect x="25" y="42" width="50" height="16" fill="#2196F3" rx="4" />
+                </svg>
+                <h1>MediAI Expert</h1>
+                <p class="subtitle">AI-Powered Diagnostic System</p>
+            </div>
+
+            <!-- View 1: Patient Registration -->
+            <div id="view-registration" class="view active">
+                <h2>Patient Registration</h2>
+                <p>Please enter the patient's name to begin the diagnostic session.</p>
+                <div class="input-group">
+                    <input type="text" id="patient-name" placeholder="E.g., John Doe" required autocomplete="off">
+                </div>
+                <button id="btn-start" class="btn primary-btn">Start Session</button>
+            </div>
+
+            <!-- View 2: Mode Selection -->
+            <div id="view-mode-selection" class="view">
+                <h2>Select Diagnostic Mode</h2>
+                <p>Choose an inference method for the diagnostic process.</p>
+                <div class="mode-buttons">
+                    <button id="btn-mode-forward" class="btn mode-btn">
+                        <div class="mode-icon">➔</div>
+                        <div class="mode-text">
+                            <h3>Forward Chaining</h3>
+                            <span>Select symptoms to deduce disease</span>
+                        </div>
+                    </button>
+                    <button id="btn-mode-backward" class="btn mode-btn">
+                        <div class="mode-icon">←</div>
+                        <div class="mode-text">
+                            <h3>Backward Chaining</h3>
+                            <span>Verify disease against symptoms</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- View 3: Forward Chaining -->
+            <div id="view-forward" class="view">
+                <h2>Symptom Assessment</h2>
+                <p>Select all applicable symptoms.</p>
+                <div class="symptom-grid" id="forward-symptoms">
+                    <!-- Checkboxes injected by JS -->
+                </div>
+                <div class="action-row">
+                    <button class="btn secondary-btn btn-back">Back</button>
+                    <button id="btn-diagnose" class="btn primary-btn">Analyze Symptoms</button>
+                </div>
+            </div>
+
+            <!-- View 4: Backward Chaining -->
+            <div id="view-backward" class="view">
+                <h2>Hypothesis Verification</h2>
+                <p>Enter a suspected disease and select present symptoms.</p>
+                <div class="input-group">
+                    <input type="text" id="target-disease" placeholder="E.g., Flu, Dengue" required autocomplete="off">
+                </div>
+                <div class="symptom-grid" id="backward-symptoms">
+                    <!-- Checkboxes injected by JS -->
+                </div>
+                <div class="action-row">
+                    <button class="btn secondary-btn btn-back">Back</button>
+                    <button id="btn-verify" class="btn primary-btn">Verify Hypothesis</button>
+                </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="overlay hidden">
+                <div class="spinner"></div>
+                <p>Processing diagnostic rules...</p>
+            </div>
+
+            <!-- View 5: Results -->
+            <div id="view-results" class="view">
+                <h2>Diagnostic Report</h2>
+                <div class="report-header">
+                    Patient Name: <strong id="report-patient-name"></strong>
+                </div>
+                <div class="report-content" id="full-report-container">
+                    <!-- Report lines will be appended here -->
+                </div>
+                <div class="final-message" id="final-diagnosis-message">
+                    <!-- Final diagnosis or result message -->
+                </div>
+                <button id="btn-reset" class="btn primary-btn" style="margin-top: 20px;">Start New Session</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
